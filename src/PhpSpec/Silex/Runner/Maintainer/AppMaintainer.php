@@ -9,6 +9,9 @@ use PhpSpec\SpecificationInterface;
 use PhpSpec\Laravel\Util\Laravel;
 use Silex\Application;
 
+/**
+ * @author Artur Lasota <lasota.artur@gmail.com>
+ */
 class AppMaintainer implements MaintainerInterface
 {
     /**

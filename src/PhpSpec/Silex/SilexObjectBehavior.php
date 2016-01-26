@@ -5,7 +5,9 @@ use PhpSpec\ObjectBehavior;
 use PhpSpec\Wrapper\Subject;
 use Silex\Application;
 
-
+/**
+ * @author Artur Lasota <lasota.artur@gmail.com>
+ */
 class SilexObjectBehavior extends ObjectBehavior
 {
     /**

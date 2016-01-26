@@ -1,11 +1,14 @@
 <?php
 namespace PhpSpec\Silex\Extension;
 
+use InvalidArgumentException;
 use PhpSpec\Extension\ExtensionInterface;
 use PhpSpec\ServiceContainer;
 use PhpSpec\Silex\Runner\Maintainer\AppMaintainer;
 
-
+/**
+ * @author Artur Lasota <lasota.artur@gmail.com>
+ */
 class SilexExtension implements ExtensionInterface
 {
     /**
@@ -17,8 +20,14 @@ class SilexExtension implements ExtensionInterface
             'silex.app',
             function ($c) {
                 $config = $c->getParam('silex_extension');
-                $path = __DIR__ . '/' . $config['bootstrap_path'];
+                $path = $this->getBootstrapPath(isset($config['bootstrap_path']) ? $config['bootstrap_path'] : 'app/boostrap.php');
+
+                if (!is_file($path)) {
+                    throw new InvalidArgumentException("App bootstrap at `{$path}` not found.");
+                }
                 $realpath = realpath($path);
+
+
                 $app = require_once $realpath;
                 return $app;
             }
@@ -32,5 +41,28 @@ class SilexExtension implements ExtensionInterface
                 );
             }
         );
+    }
+
+    /**
+     * @param $path
+     * @return string
+     */
+    private function getBootstrapPath($path)
+    {
+        $path = $this->getRootPath() . $path;
+        if (!is_file($path)) {
+            throw new InvalidArgumentException("App bootstrap at `{$path}` not found.");
+        }
+
+        return $path;
+    }
+
+
+    /**
+     * @return string
+     */
+    private function getRootPath()
+    {
+        return realpath(__DIR__ . '/../../../../../../..');
     }
 }
