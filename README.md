@@ -51,7 +51,7 @@ from `PhpSpec\Silex\SilexObjectBehavior`.
 
 ```php
 <?php
-namespace spec\App;
+namespace spec;
 
 use PhpSpec\Silex\SilexObjectBehavior;
 
