@@ -1,0 +1,27 @@
+{
+    "name": "lasotaartur/phpspec-silex",
+    "description": "Test your Silex applications with PhpSpec",
+    "keywords": ["silex", "phpspec", "testing", "test"],
+    "homepage": "https://github.com/lasotaartur/phpspec-silex",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Artur Lasota",
+            "email": "lasota.artur@gmail.com",
+            "homepage": "http://www.benconstable.co.uk"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "phpspec/phpspec": "*",
+        "silex/silex": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "PhpSpec": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
