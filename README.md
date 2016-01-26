@@ -9,7 +9,7 @@ Add this to your `composer.json`:
 
 ```json
 {
-    "require-dev": {
+    "require": {
         "lasotaartur/phpspec-silex": "dev-master"
     }
 }
