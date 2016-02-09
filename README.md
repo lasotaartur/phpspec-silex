@@ -42,6 +42,21 @@ laravel_extension:
     bootstrap_path: "/your/path/bootstrap.php"
 ```
 
+**Example of bootstrap.php**
+
+```php
+<?php
+
+$app = new Silex\Application();
+
+$app->get('/hello/{name}', function ($name) use ($app) {
+    return 'Hello '.$app->escape($name);
+});
+
+return $app;
+
+```
+
 ## Usage
 
 If you want use silex $app extend your specs
