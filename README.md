@@ -1,6 +1,6 @@
 # phpspec Silex Extension
 
-[phpspec](http://www.phpspec.net/) Extension for testing [Silex](http://http://silex.sensiolabs.org//)
+[phpspec](http://www.phpspec.net/) Extension for testing [Silex](http://silex.sensiolabs.org)
 applications.
 
 ## Installation
