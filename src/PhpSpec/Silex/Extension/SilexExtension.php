@@ -27,8 +27,8 @@ class SilexExtension implements ExtensionInterface
                 }
                 $realpath = realpath($path);
 
-
                 $app = require_once $realpath;
+                $this->removeSilexExceptionAndErrorHandler();
                 return $app;
             }
         );
@@ -64,5 +64,11 @@ class SilexExtension implements ExtensionInterface
     private function getRootPath()
     {
         return realpath(__DIR__ . '/../../../../../../..');
+    }
+
+    private function removeSilexExceptionAndErrorHandler()
+    {
+        set_exception_handler(null);
+        set_error_handler(null);
     }
 }
