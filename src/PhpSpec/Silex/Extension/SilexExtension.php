@@ -66,9 +66,11 @@ class SilexExtension implements ExtensionInterface
         return realpath(__DIR__ . '/../../../../../../..');
     }
 
-    private function removeSilexExceptionAndErrorHandler()
+    /**
+     * @param Application $app
+     */
+    private function removeSilexExceptionAndErrorHandler(Application $app)
     {
-        set_exception_handler(function(){});
-        set_error_handler(function(){});
+	unset($app['exception_handler']);
     }
 }
