@@ -29,7 +29,7 @@ class SilexExtension implements ExtensionInterface
                 $realpath = realpath($path);
 
                 $app = require_once $realpath;
-                $this->removeSilexExceptionAndErrorHandler();
+                $this->removeSilexExceptionAndErrorHandler($app);
                 return $app;
             }
         );
