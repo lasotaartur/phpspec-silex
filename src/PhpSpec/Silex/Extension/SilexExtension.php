@@ -5,6 +5,7 @@ use InvalidArgumentException;
 use PhpSpec\Extension\ExtensionInterface;
 use PhpSpec\ServiceContainer;
 use PhpSpec\Silex\Runner\Maintainer\AppMaintainer;
+use Silex\Application;
 
 /**
  * @author Artur Lasota <lasota.artur@gmail.com>
