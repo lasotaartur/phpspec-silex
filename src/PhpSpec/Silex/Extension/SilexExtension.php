@@ -68,7 +68,7 @@ class SilexExtension implements ExtensionInterface
 
     private function removeSilexExceptionAndErrorHandler()
     {
-        set_exception_handler(null);
-        set_error_handler(null);
+        set_exception_handler(function(){});
+        set_error_handler(function(){});
     }
 }
