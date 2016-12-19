@@ -72,6 +72,7 @@ class SilexExtension implements ExtensionInterface
      */
     private function removeSilexExceptionAndErrorHandler(Application $app)
     {
+        error_reporting(1);
         unset($app['exception_handler']);
     }
 }
