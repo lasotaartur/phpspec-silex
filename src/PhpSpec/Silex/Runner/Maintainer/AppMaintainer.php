@@ -4,15 +4,15 @@ namespace PhpSpec\Silex\Runner\Maintainer;
 use PhpSpec\Loader\Node\ExampleNode;
 use PhpSpec\Runner\CollaboratorManager;
 use PhpSpec\Runner\MatcherManager;
-use PhpSpec\Runner\Maintainer\MaintainerInterface;
-use PhpSpec\SpecificationInterface;
+use PhpSpec\Runner\Maintainer\Maintainer;
+use PhpSpec\Specification;
 use PhpSpec\Laravel\Util\Laravel;
 use Silex\Application;
 
 /**
  * @author Artur Lasota <lasota.artur@gmail.com>
  */
-class AppMaintainer implements MaintainerInterface
+class AppMaintainer implements Maintainer
 {
     /**
      * @var Application
@@ -41,7 +41,7 @@ class AppMaintainer implements MaintainerInterface
     /**
      * {@inheritdoc}
      */
-    public function prepare(ExampleNode $example, SpecificationInterface $context,
+    public function prepare(ExampleNode $example, Specification $context,
                             MatcherManager $matchers, CollaboratorManager $collaborators)
     {
         $reflection =
@@ -56,7 +56,7 @@ class AppMaintainer implements MaintainerInterface
     /**
      * {@inheritdoc}
      */
-    public function teardown(ExampleNode $example, SpecificationInterface $context,
+    public function teardown(ExampleNode $example, Specification $context,
                              MatcherManager $matchers, CollaboratorManager $collaborators)
     {
     }
